@@ -1,0 +1,21 @@
+.logo-div-par{
+    width: 2.5rem;
+    height: 2.5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: hsla(159, 37%, 47%, 1);
+    display: grid;
+    place-items: center;
+  }
+  .logo-div-par p{
+    color: black;
+  }
+  
+  .logo--page span{
+    font-weight: bolder;
+    /* color:hsla(240, 100%, 100%, 1); */
+    color:black;
+  }
+  .logo--div{
+    
+  }

@@ -1,0 +1,167 @@
+.nav-toggle {
+  border: 0;
+  /* padding-top: .8rem ; */
+  background: transparent;
+  background-image: url(../assets/icon-menu.svg);
+  background-repeat: no-repeat;
+  /* background-position-y: 3rem; */
+  width: 2rem;
+  aspect-ratio: 1;
+  cursor: pointer;
+  background-position: center;
+}
+.nav-toggle.close{
+  position: absolute;
+  top: 2.5rem;
+  left: 13rem;
+  width: 1.5rem; 
+  z-index: 2000;
+  background-image: url(../assets/icon-menu-close.svg);
+  
+  /* left: 1.5rem;
+  top: 1.7rem; */
+}
+.mobile-nav {
+  background-color: hsl(var(--clr-primary));
+  /* background-color: hsl(var(--clr-black)/0.2); */
+  /* background-color:hsla(219, 37%, 18%, 0.7); */
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  position: fixed;
+  z-index: 1000;
+  /* inset: top right bottom left */
+  inset: 0 30% 0 0;
+  padding: min(25rem, 20vh) 2rem;
+  margin: 0;
+  /* For the nav to come From the Top use the style*/
+  /* transform: translateY(-100%); */
+  transform: translateX(-100%);
+  transition: transform 500ms ease-in-out;
+  /* backdrop-filter: blur(.1rem); */
+  background-image: url(../assets/Lo-go.png);
+  background-repeat: no-repeat;
+  background-position-y: 2.3rem;
+}
+
+.mobile-nav.visible {
+  display: block; /* Show the nav when the `visible` class is added */
+  transform: translateX(0);
+}
+.header{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 1rem; */
+  /* padding-left: 4rem; */
+  background-color: white;
+  
+}
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li {
+  margin-bottom: 1rem;
+}
+
+.nav-list li a {
+  text-decoration: none;
+}
+
+/* Flexbox and styling for better layout */
+.text-white {
+  color: white;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  gap:1rem;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .underline-indicators {
+  text-decoration: underline;
+} */
+
+.heroo-image{
+    background-image: url(../assets/Hero.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh;
+    position: fixed;
+    top: 5rem;
+    right: 0;
+    left: 0;
+}
+
+.underline-indicators > * {
+    cursor: pointer;
+    border: 0;
+}
+
+/* .underline-indicators > *:hover,
+.underline-indicators > *:focus {
+    color: hsl( var(--clr-black) / .5);
+} */
+
+.underline-indicators > .active,
+.underline-indicators > [aria-selected="true"] {
+    color: hsl( var(--clr-black) / 1);
+    border-color: hsl( var(--clr-white) / 1); 
+    font-weight: var(--fw-600);
+}
+@media screen and (min-width: 34em) {
+}
+@media screen and (min-width: 54em) {
+  .sticky-header{
+    background-color:hsla(219, 37%, 18%,0.12);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3000;
+  }
+  .sticky-header.scrolled {
+    background-color: hsla(219, 37%, 18%, 1); /* Change to a less transparent background */
+  }
+  .hero-image{
+    background-image: url(../assets/Hero.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+  .underline-indicators > * {
+    cursor: pointer;
+    padding:  .5rem;
+    border: 0;
+    border-bottom: .2rem solid hsl( var(--clr-white) / 0 );
+}
+.underline-indicators > *:hover,
+.underline-indicators > *:focus {
+    border-color: hsl( var(--clr-white) / .5);
+}
+  .underline-indicators > .active,
+.underline-indicators > [aria-selected="true"] {
+    color: hsl( var(--clr-primary) / 1);
+    border-color: hsl( var(--clr-white) / 1); 
+    font-weight: var(--fw-600);
+}
+.desktop-nav{
+  display: flex;
+}
+.mobile-nav{
+  display: none;
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+}
