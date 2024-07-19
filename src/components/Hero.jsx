@@ -30,7 +30,7 @@ const Hero = () => {
         : <>
           <MobileNav />
           <img src={heroImage} alt="" style={{position:"relative"}}/>
-        <section className="hero-section" style={{position:"absolute", top:"3rem",left:"1.3rem"}}>
+        <section className="hero-section" style={{position:"absolute", top:"3rem",left:"1.6rem"}}>
           <h1 className="fw-600 fs-300 text-white">Browse Our Properties</h1>
           <p className="text-white">
             Find your perfect home among our curated properties. Start browsing
