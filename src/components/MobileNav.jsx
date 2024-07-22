@@ -28,9 +28,17 @@ const MobileNav = () => {
         <Link to={"/"}>
           <LogoMobile />
         </Link>
-        {auth?.user ? (
+        {!auth?.user ? (
             <Link to={'/login'}><img src={PersonImage} alt="account icon" /></Link>
-        ) :""}
+        ) :(
+          <Link
+                to={
+                  auth?.user.role === 1 ? "" : ""
+                }
+              >
+                <img src={PersonImage} alt="account icon" />
+              </Link>
+        )}
       </header>
 
       <nav className={`mobile-nav ${isNavVisible ? "visible" : ""}`}>
