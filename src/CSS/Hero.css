@@ -74,12 +74,11 @@
     }
         
     .hero-section p{
-        max-width: 60ch;
+        max-width: 50ch;
         text-align: center;
         letter-spacing: .1rem;
         line-height: 1.5;
         font-size: var(--fs-200);
-        /* border: 1px solid red; */
     }
 
 }
