@@ -30,7 +30,6 @@ const DesktopNav = () => {
     const value = e.target.value;
     if (value === "Logout") {
       logout();
-      value = "My account"
     } else if (value === "Dashboard") {
       navigate(auth.user.role === 1 ? "" : "");
     } else if (value === "Login") {

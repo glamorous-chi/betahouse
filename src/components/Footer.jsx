@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
         <div className="footer-section-popular">
           <h4>Popular Search</h4>
-          <ul>
+          <ul style={{padding:"0"}}>
             <li>Apartment for sale</li>
             <li>Apartment for rent</li>
             <li>3 bedroom flat</li>

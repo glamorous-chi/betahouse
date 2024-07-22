@@ -2,15 +2,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 2rem;
+    padding-top: 1rem;
   }
 
   .filter-left{
       display: flex;
       flex-direction: column;
   }
+  .filter-left span{
+    font-size: 1rem;
+  }
   
   @media (min-width: 54em) {
+    .filter-section{
+      padding-top: 4rem;
+    }
     .filter-section {
       display: flex;
       justify-content: space-between;
@@ -22,6 +28,10 @@
         flex-direction: row;
         gap: 1rem;
         align-items: center;
+    }
+    .filter-left span{
+      font-size: 1.3rem;
+      color: hsl(var(--clr-darker-black));
     }
   }
   

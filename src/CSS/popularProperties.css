@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 0 2rem; /* Adjust this for how much overflow you want */
+  padding: 0 2rem 5rem 0;
   box-sizing: border-box;
 }
 
@@ -20,7 +20,10 @@
   transform: translateY(-50%);
   z-index: 2;
 }
-
+.arrow.active {
+  background-color:hsl(var(--clr-primary)); /* Change background color on click */
+  color: white; /* Change text color on click */
+}
 .left-arrow {
   left: 10px;
 }
@@ -33,18 +36,24 @@
   display: flex;
   transition: transform 0.5s ease;
   width: 100%;
+  margin-inline: 4rem;
 }
 
 .image-card {
-  min-width: 25.33%; /* Adjust this width to control the visible portion */
+  min-width: 25.33%;
   box-sizing: border-box;
-  margin: 0 0.5rem; /* Add some margin to create spacing between items */
+  margin: 0 0.5rem; 
 }
 
 .image-card img {
   width: 100%;
   /* height: auto; */
   border-radius: 5px;
+}
+.discover-heading{
+  font-size: 3rem;
+  text-align: center;
+  padding: 6rem 0 4rem 0;
 }
 
 @media (max-width: 1200px) {
@@ -62,5 +71,13 @@
 @media (max-width: 480px) {
   .image-card {
     min-width: 100%; /* One card per row on extra small screens */
+  }
+  .discover-heading{
+    font-size: 2rem;
+    text-align: center;
+    padding: 3rem 0;
+  }
+  .image-gallery {
+    margin-inline: 0;
   }
 }
