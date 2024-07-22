@@ -11,7 +11,9 @@ const AboutUs = () => {
       {isDesktopOrLaptop ? <DesktopNav /> : <MobileNav />}
       <div className="home-text">
         <h1 className="fs-900 text-align">About Us Page</h1>
-        <p className="text-align fs-300">Loading...</p>
+        <p className="text-align fs-300">Coming Soon!
+          
+        </p>
       </div>
       <Footer/>
     </div>
