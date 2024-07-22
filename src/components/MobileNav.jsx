@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink,useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/Auth";
 import "../CSS/Nav.css";
 import LogoMobile from "./LogoMobile";
 import PersonImage from '../assets/Person.png'
-import cartImage from '../assets/Cart.png'
-import LogoImage from '../assets/Logo.png'
-import heroImage from '../assets/Hero.png'
 
 const MobileNav = () => {
   const [isNavVisible, setIsNavVisible] = useState(false);
+  const { auth, login } = useAuth();
+  const navigate = useNavigate();
 
   const toggleNavVisibility = () => {
     setIsNavVisible(!isNavVisible);
@@ -28,8 +28,17 @@ const MobileNav = () => {
         <Link to={"/"}>
           <LogoMobile />
         </Link>
-        <Link to={'/login'}><img src={PersonImage} alt="account icon" /></Link>
-        <Link to={'/cart'}><img src={cartImage} alt="cart" /></Link>
+        {auth?.user ? (
+            <Link to={'/login'}><img src={PersonImage} alt="account icon" /></Link>
+        ) :(
+          <Link
+                // to={
+                //   auth?.user.role === 1 ? "/dashboard/admin" : ""
+                // }
+              >
+                <img src={PersonImage} alt="account icon" />
+              </Link>
+        )}
       </header>
 
       <nav className={`mobile-nav ${isNavVisible ? "visible" : ""}`}>

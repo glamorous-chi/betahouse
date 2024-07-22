@@ -1,14 +1,128 @@
+.search-bar{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  /* background-color: red; */
+}
+
+.search-item {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid red; */
+  /* margin: 0 1rem; */
+  padding: 0 2rem;
+  /* border: 1px solid red; */
+}
+.property-type{
+  margin: 0.5rem 0;
+}
+.location{
+  margin: 0.5rem 0;
+}
+#property-type{
+  padding: .8rem;
+  border-radius: 5px;
+  color: hsla(0, 0%, 47%, 1);
+  border: 2.5px solid hsl(var(--clr-primary));
+  outline: none;
+  font-size: 1rem;
+}
+#location{
+  padding: .8rem;
+  border-radius: 5px;
+  color: hsla(0, 0%, 47%, 1);
+  border: 2.5px solid hsl(var(--clr-primary));
+  outline: none;
+  font-size: 1rem;
+}
+.search-item label{
+  /* margin-bottom: 0.5rem; */
+  font-size: 1rem;
+  color: hsl(var(--clr-secondary));
+}
+/* Leave for now */
+.search-item-count{
+display: flex;
+flex-direction: row;
+gap: 2rem;
+align-items: center;
+margin: 1rem 0 1rem 0;
+border-radius: 5px;
+color: hsl(var(--clr-tertiary));
+/* border: 2.5px solid hsl(var(--clr-grey)); */
+}
+
+.bedroom-counter {
+  display: flex;
+  align-items: center;
+  /* border: 2.5px solid hsl(var(--clr-grey)); */
+}
+
+.bedroom-counter button {
+  background-color: white;
+ border: 2.5px solid hsl(var(--clr-primary));
+  /* border-radius: 50%; */
+  padding: .3rem .8rem;
+  cursor: pointer;
+  font-size: 1rem;
+  /* font-weight: bold; */
+}
+
+.bedroom-counter .count {
+  margin: 0 1.4rem;
+  font-size: 1rem;
+}
+.search-button {
+  background-color: hsl(var(--clr-primary));
+  color: white;
+  margin: 0 2rem;
+  padding: .6rem;
+  text-align: center;
+  /* padding: 2rem; */
+  border: none;
+  border-radius:.5rem; 
+  cursor: pointer;
+  font-size: var(--fs-50);
+  font-weight: bold;
+}
+.search-button:hover,
+.search-button:focus
+{
+  background-color:black;
+}
+.count{
+  color: black;
+
+}
 @media screen and (min-width: 54em) {
   .search-bar{
     display: flex;
+    flex-direction: row;
+    gap: 0;
     align-items: center;
     justify-content: space-around;
     background-color: white;
     /* padding: 1rem; */
     border-radius: 0.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
   }
-  
+  .search-bar:after{
+    content: "";
+   position: absolute;
+   z-index: -1;
+   width: 70%;
+   height: 100%;
+   background: hsl(var(--clr-white)/.2);
+   opacity: 0;
+   transition: opacity 500ms linear transform 500ms ease-in-out;  
+  }
+  .search-bar:hover::after,
+  .search-bar:focus::after{
+    opacity: 1;
+    transform: scale(1.5);
+  }
   .search-item {
     display: flex;
     flex-direction: column;
@@ -40,24 +154,55 @@
     text-align: center;
     border-right: 2px solid hsla(210, 23%, 83%, 1);
     padding: 0 3rem;
+    
   }
   .search-item-count{
     padding: 0 5rem;
-
+    /* flex-direction: row; */
+    gap: 0;
+    /* align-items: center; */
+    margin:  0;
+    border-radius: 0;
+    color: hsl(var(--clr-tertiary));
   }
   .search-item .bedroom{
     text-align: center;
+    padding-top: .3rem;
+  }
+  .search-item .property-type{
+    text-align: center;
+  }
+  #property-type{
+    padding: 0;
+    border-radius: 0;
+    color: hsla(0, 0%, 47%, 1);
+    border: none;
+    outline: none;
+    font-size: 1rem;
+  }
+  #location{
+    padding: 0;
+    border-radius: 0;
+    color: hsla(0, 0%, 47%, 1);
+    border: none;
+    outline: none;
+    font-size: 1rem;
   }
   .bedroom-counter {
     display: flex;
     align-items: center;
   }
-  
+  .property-type{
+    margin: 0;
+  }
+  .location{
+    margin: 0;
+  }
   .bedroom-counter button {
     background-color: white;
-    /* border: 1px solid black; */
+    border: 1px solid black;
     border-radius: 50%;
-    padding: 0.5rem 1rem;
+    padding: 0.2rem .6rem;
     cursor: pointer;
     font-size: 1rem;
     font-weight: bold;
@@ -71,13 +216,21 @@
     background-color: hsl(var(--clr-primary));
     color: white;
     padding: 2rem 5rem;
-    /* padding: 2rem; */
+    margin: 0;
     border: none;
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
     cursor: pointer;
     font-size: var(--fs-100);
+    margin: 0;
   }
+  .search-button:hover,
+.search-button:focus
+{
+  background-color: hsla(153, 94%, 18%, .8);
+}
   .count{
     color: black;
 
@@ -85,5 +238,8 @@
   .location{
     text-align: left;
   }
+  /* .bedroom{
+    padding-top: .5rem;
+  } */
 }
 

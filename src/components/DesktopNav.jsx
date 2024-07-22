@@ -1,11 +1,16 @@
 import "../CSS/Nav.css";
-import { useState,useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useAuth } from "../contexts/Auth";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import LogoDesktop from "./LogoDesktop";
 import woman from "../assets/woman.png";
 
 const DesktopNav = () => {
+  const { auth, logout } = useAuth();
+  const navigate = useNavigate();
+
   const [isScrolled, setIsScrolled] = useState(false);
+
   const handleScroll = () => {
     if (window.scrollY > 30) {
       setIsScrolled(true);
@@ -15,13 +20,27 @@ const DesktopNav = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleAccountChange = (e) => {
+    const value = e.target.value;
+    if (value === "Logout") {
+      logout();
+    } else if (value === "Dashboard") {
+      navigate(auth.user.role === 1 ? "" : "");
+    } else if (value === "Login") {
+      navigate("/login");
+    } else if (value === "Signup") {
+      navigate("/signup");
+    }
+  };
+
   return (
-    <header className={`sticky-header ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={`sticky-header ${isScrolled ? "scrolled" : ""}`}>
       <div className="flex-justify-content container-main">
         <Link to={"/"}>
           <LogoDesktop />
@@ -46,7 +65,32 @@ const DesktopNav = () => {
             </li>
           </ul>
         </nav>
-        <img src={woman} alt="profile picture" />
+        <div className="flex-justify-content">
+          <img src={woman} alt="profile picture" />
+          <div className="select-container">
+          <select onChange={handleAccountChange} id="mySelect">
+            <option value="" style={{ color: "black" }}>
+              {auth?.user
+                ? auth.user.firstName + " " + auth.user.lastName
+                : "My Account"}
+            </option>
+            {!auth.user ? (
+              <>
+                <option value="Login" style={{ color: "black" }}>Login</option>
+                <option value="Signup" style={{ color: "black" }}>Signup</option>
+              </>
+            ) : (
+              <>
+                <option value="Dashboard"style={{ color: "black" }} >Dashboard</option>
+                <option value="Logout" style={{ color: "red" }}>
+                  Logout
+                </option>
+              </>
+            )}
+          </select>
+          </div>
+         
+        </div>
       </div>
     </header>
   );

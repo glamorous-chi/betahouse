@@ -17,17 +17,19 @@ const Hero = () => {
           <div className="hero-image">
           <DesktopNav /> 
         <section className="hero-section" style={{}}>
-        <h1 className="fw-600 fs-900">Browse Our Properties</h1>
-        <p className="fs-100">
+        <h1 className="">Browse Our Properties</h1>
+        <p className="">
           Find your perfect home among our curated properties. Start browsing
           now!
         </p>
+
         {/* Form Section */}
         <SearchBar/>
       </section>
       </div>
       </>
-        : <>
+        : 
+        <>
           <MobileNav />
           <img src={heroImage} alt="" style={{position:"relative"}}/>
         <section className="hero-section" style={{position:"absolute", top:"3rem",left:"2rem"}}>
@@ -37,14 +39,12 @@ const Hero = () => {
             now!
           </p>
         </section>
-        </>}
+        <div className="" style={{padding:"2rem 0" }}>
+        <SearchBar/>
+        </div>
         
-      {/* </div> */}
-
-      {/* Mobile */}
-      {/* {isDesktopOrLaptop ? <DesktopNav /> : <MobileNav />} */}
-      
-      {/* </div> */}
+        </>
+        }
     </div>
   );
 };

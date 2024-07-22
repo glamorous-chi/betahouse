@@ -164,4 +164,44 @@
   display: flex;
   flex-direction: row;
 }
+/* Remove the border and outline from the select element */
+#mySelect {
+  background-color: transparent;
+  color: white;
+  border: none; 
+  outline: none; 
+  padding: 10px; 
+  border-radius: 4px; 
+  font-size: 1.3rem;
+  appearance: none; /* Remove default arrow icon */
+  -webkit-appearance: none; /* Remove default arrow icon in Safari */
+  -moz-appearance: none; /* Remove default arrow icon in Firefox */
+  position: relative;
+}
+
+/* Optional: Add a custom arrow icon */
+/* #mySelect::after {
+  content: '&#x25BC;'; 
+  position: absolute;
+  right: 10px;
+  pointer-events: none;
+  background-color: red;
+} */
+
+/* Wrap the select element in a container for better control of the custom arrow */
+.select-container {
+  position: relative;
+  display: inline-block;
+}
+
+.select-container::after {
+  content: '▼'; /* Unicode for down arrow */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Allow clicks to pass through the arrow */
+  color: white; /* Change arrow color as needed */
+}
+
+
 }

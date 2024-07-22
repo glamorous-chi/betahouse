@@ -62,12 +62,13 @@ input[type="text"]{
   border-radius: 5px;
   color: hsl(var(--clr-tertiary));
   border: 2.5px solid hsl(var(--clr-grey));
+  width: 100% !important;
 }
 input[type="password"]{
   padding: .8rem;
   color: hsl(var(--clr-tertiary));
   border: none;
-  width: 100%;
+  width: 100% !important;
 }
 input[type="checkbox"] {
   appearance: none;
@@ -207,5 +208,18 @@ input[type="checkbox"] {
   position: relative;
   cursor: pointer;
   vertical-align: bottom;
+}
+input[type="text"]{
+  padding: 1rem;
+  width: 100% !important;
+  border-radius: 5px;
+  color: hsl(var(--clr-tertiary));
+  border: 2.5px solid hsl(var(--clr-grey));
+}
+input[type="password"]{
+  padding: 1rem;
+  color: hsl(var(--clr-tertiary));
+  /* border: 1px solid red; */
+  width: 100% !important;
 }
 }

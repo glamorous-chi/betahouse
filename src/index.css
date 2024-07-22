@@ -63,6 +63,8 @@ cursor: pointer;
 ul,
 ol {
 list-style: none;
+/* padding: 0; */
+/* margin: 0; */
 }
 html {
 scroll-behavior: smooth;
@@ -124,6 +126,11 @@ align-items: center;
 .flex-justify-content {
 display: flex;
 justify-content: space-between;
+align-items: center;
+}
+.flex-justify-content-end {
+display: flex;
+justify-content: end;
 align-items: center;
 }
 .flex-column {
@@ -265,9 +272,9 @@ gap: 1rem;
   display: block;
 }
 .contact-us-image{
-  background-image: url(./assets/room1.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url(./assets/room7.jfif);
+  background-repeat: repeat;
+  background-size: contain;
 }
 
 .home-text{

@@ -69,6 +69,8 @@
     }
     .hero-section h1{
         letter-spacing: .1rem; 
+        font-size: var(--fs-900);
+        font-weight: var(--fw-600);
     }
         
     .hero-section p{
@@ -76,6 +78,7 @@
         text-align: center;
         letter-spacing: .1rem;
         line-height: 1.5;
+        font-size: var(--fs-200);
     }
 
 }

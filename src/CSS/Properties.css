@@ -1,0 +1,27 @@
+.filter-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+  }
+
+  .filter-left{
+      display: flex;
+      flex-direction: column;
+  }
+  
+  @media (min-width: 54em) {
+    .filter-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .filter-left{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+    }
+  }
+  

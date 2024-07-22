@@ -10,7 +10,7 @@ const ContactUs = () => {
       {isDesktopOrLaptop ? <DesktopNav /> : <MobileNav />}
       <div className="home-text">
         <h1 className="fs-900 text-align">Contact Us Page</h1>
-        <p className="text-align fs-300">Coming Soon!</p>
+        <p className="text-align fs-300">Loading...</p>
       </div>
     </div>
   );

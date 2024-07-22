@@ -31,7 +31,7 @@ const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const { data } = await axios.post("/auth/login", {
+      const { data } = await axios.post("api/auth/login", {
         email,
         password,
       });
@@ -56,10 +56,11 @@ const AuthProvider = ({ children }) => {
   };
 
   // Signup function
-  const signup = async (name, email, password) => {
+  const signup = async (firstName,lastName, email, password) => {
     try {
-      const { data } = await axios.post("/auth/register", {
-        name,
+      const { data } = await axios.post("api/auth/signup", {
+        firstName,
+        lastName,
         email,
         password,
       });
@@ -80,7 +81,7 @@ const AuthProvider = ({ children }) => {
       if (error?.response && error?.response?.data && error?.response?.data?.error) {
         throw new Error(error?.response?.data?.error); 
       } else {
-        throw new Error("An error occurred while signing in");
+        throw new Error("An error occurred while signing up");
       }
     }
   };
@@ -115,7 +116,7 @@ const AdminRoutes = () => {
   // console.log(auth.user);
 
   return (
-    <AuthContext.Provider value={{ auth, setAuth, login, signup, logout, PrivateRoutes, AdminRoutes }}>
+    <AuthContext.Provider value={{ auth, setAuth, login, signup, logout}}>
       {children}
     </AuthContext.Provider>
   );
