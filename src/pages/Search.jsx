@@ -10,9 +10,9 @@ const SearchResults = () => {
     <div>
       <div className="row">
         {values.results.length > 0 ? (
-          values.results.map((property) => (
+          values.results.map((p) => (
             <div key={property._id} className="col-md-4">
-              <PropertyCard property={property} />
+              <PropertyCard property={p} />
             </div>
           ))
         ) : (

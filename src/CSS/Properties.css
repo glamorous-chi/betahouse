@@ -12,6 +12,9 @@
   .filter-left span{
     font-size: 1rem;
   }
+  .sort-by span{
+    font-size: 1rem;
+  }
   
   @media (min-width: 54em) {
     .filter-section{
@@ -32,6 +35,9 @@
     .filter-left span{
       font-size: 1.3rem;
       color: hsl(var(--clr-darker-black));
+    }
+    .sort-by span{
+      font-size: 1.3rem;
     }
   }
   

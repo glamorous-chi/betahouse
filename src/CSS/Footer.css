@@ -60,6 +60,7 @@
 .footer-bottom a:hover {
   text-decoration: underline;
 }
+
 @media screen and (min-width: 54em) {
 .footer-section-links{
   /* text-align: center; */
@@ -67,7 +68,7 @@
   place-content: center; */
 }
 .footer-section-popular{
-
+  margin-top: .8rem;
 }
 
 }

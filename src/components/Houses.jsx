@@ -64,7 +64,9 @@ const Houses = () => {
           ))
         )}
       </div>
-      <div className='pagination-controls'>
+      <div className='pagination-controls' style={
+        {marginTop:"5rem"}
+      }>
         <button onClick={handlePreviousPage} disabled={currentPage === 1}>
           Previous
         </button>

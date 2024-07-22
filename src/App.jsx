@@ -16,8 +16,8 @@ import AboutUs from './pages/AboutUs';
 import Houses from './components/Houses'
 import { AuthProvider } from './contexts/Auth';
 import 'react-toastify/dist/ReactToastify.css';
-import DetailPage from './pages/DetailPage';
-// import Search from './pages/Search'
+// import DetailPage from './pages/DetailPage';
+import Search from './pages/Search'
 
 function App() {
 
@@ -33,8 +33,8 @@ function App() {
           <Route path="/properties" element={<Houses/>} />
           <Route path="/about-us" element={<AboutUs/>} />
           <Route path="/blog" element={<Blog/>} />
-          {/* <Route path="/search" element={<Search />} /> */}
-          <Route path="/detail/:productId" element={<DetailPage />} />
+          <Route path="/search" element={<Search />} />
+          {/* <Route path="/detail/:productId" element={<DetailPage />} /> */}
           <Route path="/contact-us" element={<ContactUs/>} />
           <Route path="/signup" element={<Signup/>}/>
           <Route path="/login" element={<Login/>}/>
