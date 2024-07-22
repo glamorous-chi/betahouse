@@ -1,40 +1,66 @@
+.carousel-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 2rem; /* Adjust this for how much overflow you want */
+  box-sizing: border-box;
+}
+
+.arrow {
+  cursor: pointer;
+  font-size: 2rem;
+  background-color: hsla(0, 0%, 96%, 1);
+  color: black;
+  padding: .2rem 0.5rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
 .image-gallery {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px; /* Adjust this value to increase/decrease the space between the cards */
-  justify-content: center; /* Center the gallery */
+  transition: transform 0.5s ease;
+  width: 100%;
 }
 
 .image-card {
-  width: calc(25% - 16px); /* Four cards per row with 16px gap */
-  margin-bottom: 16px; /* Space between rows */
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative; /* For absolute positioning inside the card */
+  min-width: 25.33%; /* Adjust this width to control the visible portion */
+  box-sizing: border-box;
+  margin: 0 0.5rem; /* Add some margin to create spacing between items */
 }
 
 .image-card img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  /* height: auto; */
+  border-radius: 5px;
 }
 
 @media (max-width: 1200px) {
   .image-card {
-    width: calc(33.33% - 16px); /* Three cards per row on medium screens */
+    min-width: 33.33%; /* Three cards per row on medium screens */
   }
 }
 
 @media (max-width: 768px) {
   .image-card {
-    width: calc(50% - 16px); /* Two cards per row on small screens */
+    min-width: 50%; /* Two cards per row on small screens */
   }
 }
 
 @media (max-width: 480px) {
   .image-card {
-    width: calc(100% - 16px); /* One card per row on extra small screens */
+    min-width: 100%; /* One card per row on extra small screens */
   }
 }
