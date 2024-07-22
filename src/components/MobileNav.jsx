@@ -30,15 +30,7 @@ const MobileNav = () => {
         </Link>
         {auth?.user ? (
             <Link to={'/login'}><img src={PersonImage} alt="account icon" /></Link>
-        ) :(
-          <Link
-                // to={
-                //   auth?.user.role === 1 ? "/dashboard/admin" : ""
-                // }
-              >
-                <img src={PersonImage} alt="account icon" />
-              </Link>
-        )}
+        ) :""}
       </header>
 
       <nav className={`mobile-nav ${isNavVisible ? "visible" : ""}`}>
