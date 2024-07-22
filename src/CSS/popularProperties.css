@@ -25,7 +25,7 @@
   color: white; /* Change text color on click */
 }
 .left-arrow {
-  left: 10px;
+  left: 50px;
 }
 
 .right-arrow {
@@ -80,4 +80,8 @@
   .image-gallery {
     margin-inline: 0;
   }
+  .left-arrow {
+    left: 10px;
+  }
+  
 }
