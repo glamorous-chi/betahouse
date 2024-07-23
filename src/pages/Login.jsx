@@ -32,6 +32,9 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
    
+    if (!email || !password) {
+      return toast.error("Enter all fields");
+    }
     const emailRegex = /\S+@\S+\.\S+/;
     if (!emailRegex.test(email)) {
       return toast.error("invalid email address");
@@ -39,10 +42,6 @@ const Login = () => {
     const pwdTrim = password.trim();
     if (!password || pwdTrim.length < 6) {
       return toast.error("Enter a valid password");
-    }
-
-    if (!email && !password) {
-      return toast.error("Enter all fields");
     }
     // else if ((!email || password) || (email || !password)){
     //   return toast.error("You need to sign up");

@@ -16,7 +16,7 @@ const Houses = () => {
     try {
       const response = await axios.get(`/api/property/all?page=${page}&limit=9`);
       setFetchProperties(response?.data?.properties);
-      setTotalPages(response?.data?.totalPages);  // Assuming your API returns the total number of pages
+      setTotalPages(response?.data?.totalPages);
       console.log(response?.data?.properties);
     } catch (error) {
       console.error("Error fetching data:", error);

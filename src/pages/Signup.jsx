@@ -14,8 +14,8 @@ import { IoEyeSharp } from "react-icons/io5";
 import Thankyou from "./Thankyou";
 
 const Signup = () => {
-  const [firstName, setFirstName] = useState("Aisha");
-  const [lastName, setLastName] = useState("Cucurella");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
