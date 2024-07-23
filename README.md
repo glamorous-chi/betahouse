@@ -67,7 +67,8 @@ I will love to make sure users can see the details of a property they are intere
 ### Useful resources
 
 - ChatGpt
-
+- Google
+- Stackoverflow
 
 ## Author
 
