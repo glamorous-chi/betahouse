@@ -75,4 +75,5 @@ I will love to make sure users can see the details of a property they are intere
 
 ## Acknowledgments
 This is our final project for the online internship which we had to complete in a week, it was so stressful, but was absolutely worth it. Coding is hard, not gonna lie.
+
 All the same, thanks to the TSA internship team!
