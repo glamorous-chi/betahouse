@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Screenshot
 
-![BetaHouse Home Page](./Screenshot%202024-07-23%20at%2016-24-47%20BetaHouse%20Properties.png)
+![BetaHouse Properties Page](./Screenshot%202024-07-23%20at%2016-24-47%20BetaHouse%20Properties.png)
 
 
 ### Links
@@ -45,23 +45,22 @@ Users should be able to:
 
 ### Built with
 
-- Semantic HTML5 markup
+- JavaScript
 - CSS custom properties
 - CSS utility classes
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- JavaScript
 
 
 ### What I learned
 
-I learned how to fetch from the backend resource which I created
+I learned how to build a full stack project from scratch.For this project, I worked with React which is a JavaScript Library, that is used to develop SPAs (Single Page Apllications) which allow for seemless navigation between pages on a website.
 
 
 ### Continued development
 
-I will love to make sure users can see the details of a property they are interested in when they hover or click on the property
+I will love to make sure users can see the details of a property they are interested in when they hover or click on the property, and that users can search for a prperty by using the saerch bar in the hero section of the properties page.
 
 
 ### Useful resources
@@ -75,4 +74,5 @@ I will love to make sure users can see the details of a property they are intere
 - GitHub - (https://github.com/glamorous-chi)
 
 ## Acknowledgments
-This is our final project for the online internship which we had to complete in a week, it was so stressful, but was absolutely worth it. COding is hard, not gonna lie.
+This is our final project for the online internship which we had to complete in a week, it was so stressful, but was absolutely worth it. Coding is hard, not gonna lie.
+All the same, thanks to the TSA internship team!
