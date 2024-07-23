@@ -1,4 +1,4 @@
-# TSA Online Internship (Stage 3) - BetaHouse
+# TSA Online Internship (Stage 3) Task - BetaHouse
 
 ## Welcome! 👋
 
@@ -60,7 +60,7 @@ I learned how to build a full stack project from scratch.For this project, I wor
 
 ### Continued development
 
-I will love to make sure users can see the details of a property they are interested in when they hover or click on the property, and that users can search for a prperty by using the saerch bar in the hero section of the properties page.
+Users shoould be able to see the details of a property they are interested in when they click on the property, and that users shouldbe able to search and see their search results for a property by using the search bar in the hero section of the properties page.
 
 
 ### Useful resources
