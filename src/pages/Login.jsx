@@ -43,15 +43,15 @@ const Login = () => {
     if (!password || pwdTrim.length < 6) {
       return toast.error("Enter a valid password");
     }
-    // else if ((!email || password) || (email || !password)){
-    //   return toast.error("You need to sign up");
-    // }
-    // if(!email || password) {
-    //   return toast.error("Email field is required");
-    // }
-    // else if(email || !password) {
-    //   return toast.error("Password field is required");
-    // }
+    else if ((!email || password) || (email || !password)){
+      return toast.error("You need to sign up");
+    }
+    if(!email || password) {
+      return toast.error("Email field is required");
+    }
+    else if(email || !password) {
+      return toast.error("Password field is required");
+    }
 
     try {
       setLoading(true);
