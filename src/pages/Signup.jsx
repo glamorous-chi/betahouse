@@ -22,43 +22,88 @@ const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [firstNameError, setFirstNameError] = useState(false);
+  const [lastNameError, setLastNameError] = useState(false);
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [confirmPasswordError, setConfirmPasswordError] = useState("");
 
   
   const navigate = useNavigate();
   const { signup } = useAuth();
 
   const handleFirstNameChange = (e) => {
-    setFirstName(e.target.value);
+    setFirstName(e.target.value).trim();
+    setFirstNameError("")
   };
   const handleLastNameChange = (e) => {
-    setLastName(e.target.value);
+    setLastName(e.target.value).trim();
+    setLastNameError("")
   };
 
   const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+    setEmail(e.target.value).trim();
+    setEmailError("")
   };
 
   const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
+    setPassword(e.target.value).trim();
+    setPasswordError("")
   };
 
   const handleConfirmPasswordChange = (e) => {
-    setConfirmPassword(e.target.value);
+    setConfirmPassword(e.target.value).trim();
+    setConfirmPasswordError("")
   };
+
+const isFormValid = () => {
+  let isValid = true;
+  const emailRegex = /\S+@\S+\.\S+/;
+
+  if(!firstName){
+    setFirstNameError("First Name field is required");
+    isValid = false;
+  }
+  if(!lastName){
+    setLastNameError("Last Name field is required");
+    isValid = false;
+  }
+
+  if(!email){
+    setEmailError("Email field is required");
+    isValid = false;
+  }
+  else if(!emailRegex.test(email)){
+      setEmailError("Invalid email address");
+      isValid = false;
+  }
+
+  if(!password){
+    setPasswordError("Password field is required");
+    isValid = false;
+  }
+  else if(password.length < 6){
+    setPasswordError("Password must be at least 6 characters long");
+    isValid = false;
+  }
+  if(!confirmPassword){
+    setConfirmPasswordError("Confirm Password field is required");
+    isValid = false;
+  }
+  else if(password!== confirmPassword){
+    setConfirmPasswordError("Passwords do not match");
+    isValid = false;
+  }
+
+  return isValid;
+}
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!firstName || !lastName|| !email || !password) {
-      console.log("enter all fields....");
-      return toast.error("Enter all fields");
-    }
-    const emailRegex = /\S+@\S+\.\S+/;
-    if (!emailRegex.test(email)) {
-      return toast.error("invalid email address");
-    }
-    const pwdTrim = password.trim();
-    if (!password || pwdTrim.length < 6) {
-      return toast.error("Enter a valid password");
-    }
+
+    if(!isFormValid()) return
+
     try {
       // sending form data to server
       setLoading(true);
@@ -76,8 +121,8 @@ const Signup = () => {
       }
     } catch (err) {
       console.log(err);
-      const { error } = err?.response?.data;
-      toast.error(error);
+      const msg = err?.message;
+      toast.error(msg);
       setLoading(false);
     }
   };
@@ -111,15 +156,18 @@ const Signup = () => {
               <div className="input-group">
                 <label>First Name</label>
                 <input type="text" placeholder="Enter First Name" value={firstName} onChange={handleFirstNameChange}/>
+                {firstNameError && <p className="error">{firstNameError}</p>}
               </div>
               <div className="input-group">
                 <label>Last Name</label>
-                <input type="text" placeholder="Enter Last Name" value={lastName} onChange={handleLastNameChange}/>
+                <input type="text" placeholder="Enter Last Name" value={lastName} onChange={handleLastNameChange}/>          
+                {lastNameError && <p className="error">{lastNameError}</p>}
               </div>
             </div>
             <label>Email</label>
             <input type="text" placeholder="Enter Email" value={email}
                   onChange={handleEmailChange}/>
+            {emailError && <p className="error">{emailError}</p>}
             <label>Password</label>
             <div className="password-field flex">
               <input type={showPassword ? "text" : "password"} placeholder="Enter Password" value={password}
@@ -133,6 +181,7 @@ const Signup = () => {
                     
                   </span>
             </div>
+            {passwordError && <p className="error">{passwordError}</p>}
 
             <label>Confirm Password</label>
             <div className="password-field flex">
@@ -148,6 +197,7 @@ const Signup = () => {
                     )}
                   </span>
             </div>
+            {confirmPasswordError && <p className="error">{confirmPasswordError}</p>}
 
             <div className="flex-hero" style={{ marginTop: "1rem" }}>
               <input type="checkbox" />

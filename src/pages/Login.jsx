@@ -18,45 +18,56 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [generalError, setGeneralError] = useState("");
 
   const navigate = useNavigate();
   const { login } = useAuth();
 
   const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+    setEmail(e.target.value).trim();
+    setEmailError("");
+    setGeneralError("");
   };
   const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
+    setPassword(e.target.value).trim();
+    setPasswordError("");
+    setGeneralError("");
   };
+
+  const isFormValid = () => {
+    let isValid =  true;
+    const emailRegex = /\S+@\S+\.\S+/;
+
+    if(!email){
+      setEmailError("Email field is required");
+      isValid = false;
+    }
+    else if(!emailRegex.test(email)){
+        setEmailError("Invalid email address");
+        isValid = false;
+    }
+
+    if(!password){
+      setPasswordError("Password field is required");
+      isValid = false;
+    }
+    else if(password.length < 6){
+      setPasswordError("Password must be at least 6 characters long");
+      isValid = false;
+    }
+    return isValid;
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-   
-    if (!email || !password) {
-      return toast.error("Enter all fields");
-    }
-    const emailRegex = /\S+@\S+\.\S+/;
-    if (!emailRegex.test(email)) {
-      return toast.error("invalid email address");
-    }
-    const pwdTrim = password.trim();
-    if (!password || pwdTrim.length < 6) {
-      return toast.error("Enter a valid password");
-    }
-    else if ((!email || password) || (email || !password)){
-      return toast.error("You need to sign up");
-    }
-    if(!email || password) {
-      return toast.error("Email field is required");
-    }
-    else if(email || !password) {
-      return toast.error("Password field is required");
-    }
+
+    if(!isFormValid()) return
 
     try {
       setLoading(true);
       const data = await login(email, password);
-      const success = await login(email, password);
       setLoading(false);
 
       if (!data?.error) {
@@ -64,11 +75,13 @@ const Login = () => {
         setTimeout(() => {
           navigate("/properties");
         }, 5000);
-      } else {
+      }else if(data.error === "User not found" || data.error === "Wrong password"){
+        setGeneralError("Password must be at least 6 characters long")
+      }
+       else {
         toast.error("Log in failed");
       }
     } catch (err) {
-      // console.log(err?.message);
       const msg = err?.message;
       toast.error(msg);
       setLoading(false);
@@ -96,7 +109,7 @@ const Login = () => {
           <label>Email</label>
           <input type="text" placeholder='Enter Email' value={email}
                 onChange={handleEmailChange}/>
-          <p>{email.error}</p>
+          {emailError && <p className="error">{emailError}</p>}
           <label>Password</label>
             <div className="password-field flex">
               <input type={showPassword ? "text" : "password"} placeholder="Enter Password"  value={password}
@@ -109,7 +122,7 @@ const Login = () => {
                   )}
                 </span>
             </div>
-            <p>{password.error}</p>
+            {passwordError && <p className="error">{passwordError}</p>}
           <div className='flex-justify-content'>
           <div className='flex-hero' style={{ marginTop: "1rem" }}>
             <input type="checkbox" />
