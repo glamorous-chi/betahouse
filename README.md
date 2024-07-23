@@ -4,7 +4,7 @@
 
 Thanks for checking out my repository.
 
-This is a solution to the [News homepage challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/news-homepage-H6SWTa1MFl). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [BetaHouse Task](https://www.figma.com/design/ipytxHPEP6m4uqI6WdDPen/Beta-House-Internship-Task-for-DEvs?node-id=0-1&t=Ix3vPYFZfbO2hkrf-1). 
 
 
 ## Table of contents
@@ -28,18 +28,19 @@ This is a solution to the [News homepage challenge on Frontend Mentor](https://w
 
 Users should be able to:
 
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
+- Sign up and Sign in into the website
+- See hover and focus states for all interactive elements on the page (It must be functional)
+- View Properties coming from a backend resource
+
 
 ### Screenshot
 
-![News Home Page](./Screenshot_2024-06-15%20Frontend%20Mentor%20News%20homepage(1).png)
+![BetaHouse Home Page](./Screenshot%202024-07-23%20at%2016-24-47%20BetaHouse%20Properties.png)
 
 
 ### Links
 
-- Solution URL: (https://your-solution-url.com)
-- Live Site URL: (https://news-homepage-tau-tawny.vercel.app/)
+- Live Site URL: (https://betahouse.vercel.app/)
 
 
 ### Built with
@@ -55,33 +56,22 @@ Users should be able to:
 
 ### What I learned
 
-I learned how to use CSS Grid, CSS Grid properties, and Flexbox. Most importantly, I learned how to use Utility classes and Custom properties to my advantage. I also learnt how to do a reset in order to remove some default styles that came with some HTML elements. For example, HTML Paragraphs come with a default margin of 16px at the top and bottom, and a reset removes such, so I can give my own styles as I wish.
+I learned how to fetch from the backend resource which I created
 
-```css
-/* Using Grid Template areas to achieve the design layout */
-.section-grid{
-    grid-template-areas:
-    "one one four"
-    "two three four"
-    "five five five" ;
-  }
-```
 
 ### Continued development
 
-I will love to sharpen my skills when it comes to building a good design structure however the Layout may be i.e following a Mobile-first design approach whilst keeping my Desktop design in mind. Essentially, learning to see the bigger pcture and not focusing just on my Mobile design but seeing how my desktop design layout differs from my Mobile design layout and ensuring that both designs come out well while building.
+I will love to make sure users can see the details of a property they are interested in when they hover or click on the property
 
 
 ### Useful resources
 
-- [CSS Grid Tutorial](https://www.youtube.com/watch?v=rg7Fvvl3taU&t=485s) - This helped me understand CSS Grid.
-- [CSS Flexbox Tutorial](https://www.youtube.com/watch?v=u044iM9xsWU&t=987s) - This is helped me understand Flexbox better.
+- ChatGpt
 
 
 ## Author
 
-- Frontend Mentor - (https://www.frontendmentor.io/profile/glamorous-chi)
+- GitHub - (https://github.com/glamorous-chi)
 
 ## Acknowledgments
-
-Even though he may never see this, I want to say a Huge thanks to Mr. Kevin Powell for his awesome tutorials on YouTube on CSS Grid and CSS as a whole.
+This is our final project for the online internship which we had to complete in a week, it was so stressful, but was absolutely worth it. COding is hard, not gonna lie.
