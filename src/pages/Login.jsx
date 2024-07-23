@@ -96,6 +96,7 @@ const Login = () => {
           <label>Email</label>
           <input type="text" placeholder='Enter Email' value={email}
                 onChange={handleEmailChange}/>
+          <p>{email.error}</p>
           <label>Password</label>
             <div className="password-field flex">
               <input type={showPassword ? "text" : "password"} placeholder="Enter Password"  value={password}
@@ -108,6 +109,7 @@ const Login = () => {
                   )}
                 </span>
             </div>
+            <p>{password.error}</p>
           <div className='flex-justify-content'>
           <div className='flex-hero' style={{ marginTop: "1rem" }}>
             <input type="checkbox" />
