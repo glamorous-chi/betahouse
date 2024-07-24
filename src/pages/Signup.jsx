@@ -11,7 +11,6 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { useMediaQuery } from "react-responsive";
 import { FaEyeSlash } from "react-icons/fa";
 import { IoEyeSharp } from "react-icons/io5";
-import Thankyou from "./Thankyou";
 
 const Signup = () => {
   const [firstName, setFirstName] = useState("");
