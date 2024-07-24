@@ -4,7 +4,6 @@ import Signup from './pages/Signup'
 import Properties from './pages/Properties';
 import Login from './pages/Login';
 import { ToastContainer } from "react-toastify";
-import Thankyou from './pages/Thankyou';
 import NotFound from './pages/Notfound';
 // import Logo from './components/Logo';
 import { ScrollToTop } from './components/Scrolltotop';
@@ -38,7 +37,6 @@ function App() {
           <Route path="/contact-us" element={<ContactUs/>} />
           <Route path="/signup" element={<Signup/>}/>
           <Route path="/login" element={<Login/>}/>
-          <Route path="/thankyou" element={<Thankyou/>}/>
           <Route path="/*" element={<NotFound/>}/>
           <Route path="/logo" element={<LogoMobile/>}/>
         </Routes>
