@@ -60,7 +60,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>Copyright 2023 Betahouse | Designed by Michaelfg</p>
+        <p>Copyright 2023 Betahouse | Designed by Michaelfig</p>
         <p><a href="/privacy-policy">Privacy Policy</a></p>
       </div>
     </footer>

@@ -1,10 +1,8 @@
 .nav-toggle {
   border: 0;
-  /* padding-top: .8rem ; */
   background: transparent;
   background-image: url(../assets/icon-menu.svg);
   background-repeat: no-repeat;
-  /* background-position-y: 3rem; */
   width: 2rem;
   aspect-ratio: 1;
   cursor: pointer;
@@ -17,14 +15,9 @@
   width: 1.5rem; 
   z-index: 2000;
   background-image: url(../assets/icon-menu-close.svg);
-  
-  /* left: 1.5rem;
-  top: 1.7rem; */
 }
 .mobile-nav {
   background-color: hsl(var(--clr-primary));
-  /* background-color: hsl(var(--clr-black)/0.2); */
-  /* background-color:hsla(219, 37%, 18%, 0.7); */
   display: flex;
   gap: 1rem;
   flex-direction: column;
@@ -34,11 +27,8 @@
   inset: 0 30% 0 0;
   padding: min(25rem, 20vh) 2rem;
   margin: 0;
-  /* For the nav to come From the Top use the style*/
-  /* transform: translateY(-100%); */
   transform: translateX(-100%);
   transition: transform 500ms ease-in-out;
-  /* backdrop-filter: blur(.1rem); */
   background-image: url(../assets/Lo-go.png);
   background-repeat: no-repeat;
   background-position-y: 2.3rem;
@@ -53,8 +43,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* gap: 1rem; */
-  /* padding-left: 4rem; */
   background-color: white;
   
 }
@@ -71,8 +59,6 @@
 .nav-list li a {
   text-decoration: none;
 }
-
-/* Flexbox and styling for better layout */
 .text-white {
   color: white;
 }
@@ -86,11 +72,6 @@
   display: flex;
   flex-direction: column;
 }
-
-/* .underline-indicators {
-  text-decoration: underline;
-} */
-
 .heroo-image{
     background-image: url(../assets/Hero.png);
     background-repeat: no-repeat;
@@ -106,12 +87,6 @@
     cursor: pointer;
     border: 0;
 }
-
-/* .underline-indicators > *:hover,
-.underline-indicators > *:focus {
-    color: hsl( var(--clr-black) / .5);
-} */
-
 .underline-indicators > .active,
 .underline-indicators > [aria-selected="true"] {
     color: hsl( var(--clr-black) / 1);
@@ -130,7 +105,7 @@
     z-index: 3000;
   }
   .sticky-header.scrolled {
-    background-color: hsla(219, 37%, 18%, 1); /* Change to a less transparent background */
+    background-color: hsla(219, 37%, 18%, 1);
   }
   .hero-image{
     background-image: url(../assets/Hero.png);
@@ -164,7 +139,6 @@
   display: flex;
   flex-direction: row;
 }
-/* Remove the border and outline from the select element */
 #mySelect {
   background-color: transparent;
   color: white;
@@ -178,29 +152,18 @@
   -moz-appearance: none; /* Remove default arrow icon in Firefox */
   position: relative;
 }
-
-/* Optional: Add a custom arrow icon */
-/* #mySelect::after {
-  content: '&#x25BC;'; 
-  position: absolute;
-  right: 10px;
-  pointer-events: none;
-  background-color: red;
-} */
-
-/* Wrap the select element in a container for better control of the custom arrow */
 .select-container {
   position: relative;
   display: inline-block;
 }
 
 .select-container::after {
-  content: '▼'; /* Unicode for down arrow */
+  content: '▼'; 
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none; /* Allow clicks to pass through the arrow */
-  color: white; /* Change arrow color as needed */
+  color: white; 
 }
 
 

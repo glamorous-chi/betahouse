@@ -3,15 +3,16 @@ import { useParams, Link } from 'react-router-dom';
 import { useMediaQuery } from "react-responsive";
 import LogoMobile from '../../components/LogoMobile';
 
-const DetailCard = ({ property }) => {
-  const { image, price } = property;
+const DetailCard = ({ property}) => {
   const { propertyId } = useParams();
-  const isDesktopOrLaptop = useMediaQuery({ query: "(min-width: 54em)" });
-
-  let Price = price.toLocaleString(undefined, {
-    minimumFractionDigits: 2,
-  });
-
+  let image, price;
+   if (property) {
+     const { image, price } = property;
+       let Price = price.toLocaleString(undefined);
+   } else {
+     console.error("Property data is not available yet.");
+   }
+   const isDesktopOrLaptop = useMediaQuery({ query: "(min-width: 54em)" });
   return (
     <div className="flex" style={{ height: "20rem", textAlign: "left" }}>
       <div style={{ height: "20rem" }}>
@@ -36,10 +37,10 @@ const DetailCard = ({ property }) => {
             <div className="flex-hero" style={{ marginTop: "1rem" }}>
               <input type="checkbox" required />
               <span>
-                I agree to the{" "}
+                I agree to the
                 <span className="text-primary">
                   <Link to={"/terms"}>Terms of Service</Link>
-                </span>{" "}
+                </span>
               </span>
             </div>
             <button type="submit" className='signup-button'>

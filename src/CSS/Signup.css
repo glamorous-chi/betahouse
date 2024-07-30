@@ -61,6 +61,7 @@ input[type="text"]{
   color: hsl(var(--clr-tertiary));
   border: 2.5px solid hsl(var(--clr-grey));
   width: 100% !important;
+  /* outline: 2.5px solid hsl(var(--clr-primary)); */
 }
 input[type="password"]{
   padding: .8rem;
