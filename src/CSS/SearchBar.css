@@ -108,8 +108,8 @@ color: hsl(var(--clr-tertiary));
     position: relative;
     z-index: 1;
   }
-  .search-bar:after{
-    content: "";
+  .search-bar::after{
+   content: "";
    position: absolute;
    z-index: -1;
    width: 70%;
