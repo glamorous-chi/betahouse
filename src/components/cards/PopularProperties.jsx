@@ -4,7 +4,7 @@ import LazyLoad from 'react-lazy-load';
 const PopularPropertiesCard = ({ img }) => {
   return (
     <div className="image-card">
-      <LazyLoad threshold={0.95}>
+      <LazyLoad>
       <img src={img} alt="Home" />
       </LazyLoad>
     </div>
